@@ -6,9 +6,9 @@ export default class App extends React.Component {
     this.state = {
       list: [
         {name: "首页",id: 1},
-        {name: "沸点",id: 2},
-        {name: "小册",id: 3},
-        {name: "活动",id: 4},
+        {name: "日志",id: 2},
+        {name: "生活",id: 3},
+        {name: "关于",id: 4},
       ]
     };
   }
