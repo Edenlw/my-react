@@ -1,12 +1,14 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import routes from './router/router.jsx'
+import routes from './router/router.jsx';
+import Header from "./component/layout/Header";
 import './App.css';
 
 function App() {
   return (
-    <Suspense fallback={<div></div>}>
+    <Suspense fallback={<div>123</div>}>
       <BrowserRouter>
+        <Header />
         {
         //遍历配置文件，生成路由列表
           routes.map((route,index)=>{

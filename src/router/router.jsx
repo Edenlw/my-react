@@ -1,12 +1,13 @@
 import React from "react";
-export default [
+const routers = [
   {
-    path: "/",
+    path: "/login",
     exact: true,
     component: React.lazy(()=>import(/*webpackchunkname:login*/'../pages/login/login.jsx' ))
   },
   {
-    path: "/home",
-    component:  React.lazy(()=>import(/*webpackchunkname:home*/'../pages/home/home.jsx' ))
+    path: "/",
+    component:  React.lazy(()=>import(/*webpackchunkname:home*/'../pages/home/home.jsx' )),
   },
 ]
+export default routers;
