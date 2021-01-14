@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import routes from './router/router.jsx'
-console.log(routes,"jj");
+import './App.css';
+
 function App() {
   return (
     <Suspense fallback={<div></div>}>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Button } from 'antd';
 export default class App extends React.Component{
 
   constructor(props) {
@@ -31,7 +31,8 @@ export default class App extends React.Component{
   render() {
     return (
       <div>
-        <button onClick={this.handleClick.bind(this)} disabled={this.state.disabled}>Add Item</button>
+        <Button type="primary">Button</Button>
+        <Button onClick={this.handleClick.bind(this)} disabled={this.state.disabled}>Add Item</Button>
         <ul>
         {
           this.state.items.map(function(item) {
