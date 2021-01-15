@@ -1,0 +1,15 @@
+
+.header {
+  height: 60px;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .nav {
+    width: 68px;
+    cursor: pointer;
+    &:hover {
+      color: blue;
+    }
+  }
+}

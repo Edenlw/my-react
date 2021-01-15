@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "./Header.scss";
 export default class App extends React.Component {
 
   constructor(props) {
@@ -9,22 +10,26 @@ export default class App extends React.Component {
         {name: "日志",id: 2},
         {name: "生活",id: 3},
         {name: "关于",id: 4},
-      ]
+      ],
+      currentName: "首页"
     };
   }
   componentDidMount() {
-
+    console.log(styles,"9");
   }
-  navHandle(e) {
-    console.log(e,123);
+  navHandle(name) {
+    // this.setState({
+    //   currentName: name
+    // })
+    console.log(name,123);
   }
   render() {
     return (
-      <div style={{height:"60px",borderBottom:"1px solid #f1f1f1",display:"flex",justifyContent:"center",alignItems:"center"}}>
+      <div className={styles.header}>
         {
           this.state.list.map((item) => {
             return (
-              <div className="nav" onClick={this.navHandle} style={{width:"68px",cursor:"pointer"}} key={item.id}>{item.name}</div>
+              <div className={styles.nav} style={{color:`${this.state.currentName === item.name ? 'blue' : ''}`}} onClick={this.navHandle(item.name)} key={item.id}>{item.name}</div>
             )
           })
         }
