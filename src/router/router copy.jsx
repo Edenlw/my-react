@@ -2,23 +2,22 @@ import React from "react";
 const routers = [
   {
     path: "/",
-    exact: true,
     component: React.lazy(()=>import(/*webpackchunkname:login*/'../pages/login/login.jsx' )),
     childRoutes: [
       {
-        path: "/home",
+        path: "home",
         component:  React.lazy(()=>import(/*webpackchunkname:home*/'../pages/home/home.jsx' )),
       },
       {
-        path: "/about",
+        path: "about",
         component:  React.lazy(()=>import(/*webpackchunkname:about*/'../pages/about/about.jsx' )),
       },
       {
-        path: "/life",
+        path: "life",
         component:  React.lazy(()=>import(/*webpackchunkname:life*/'../pages/life/life.jsx' )),
       },
       {
-        path: "/blog",
+        path: "blog",
         component:  React.lazy(()=>import(/*webpackchunkname:blog*/'../pages/blog/blog.jsx' )),
       }
     ]

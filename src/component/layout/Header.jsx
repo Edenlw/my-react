@@ -1,39 +1,52 @@
-import React from 'react';
+import React from "react";
 import styles from "./Header.scss";
+import classnames from "classnames";
+import { Link } from "react-router-dom";
 export default class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       list: [
-        {name: "首页",id: 1},
-        {name: "日志",id: 2},
-        {name: "生活",id: 3},
-        {name: "关于",id: 4},
+        { name: "首页", router: "home", id: 1 },
+        { name: "日志", router: "blog", id: 2 },
+        { name: "生活", router: "life", id: 3 },
+        { name: "关于", router: "about", id: 4 },
       ],
-      currentName: "首页"
+      currentName: "首页",
     };
   }
   componentDidMount() {
-    console.log(styles,"9");
+    if(localStorage["currentName"] !== undefined) {
+      this.setState({
+        currentName: localStorage["currentName"],
+      });
+    }
   }
   navHandle(name) {
-    // this.setState({
-    //   currentName: name
-    // })
-    console.log(name,123);
+    localStorage.setItem("currentName", name);
+    this.setState({
+      currentName: name,
+    });
   }
   render() {
     return (
       <div className={styles.header}>
-        {
-          this.state.list.map((item) => {
-            return (
-              <div className={styles.nav} style={{color:`${this.state.currentName === item.name ? 'blue' : ''}`}} onClick={this.navHandle(item.name)} key={item.id}>{item.name}</div>
-            )
-          })
-        }
+        {this.state.list.map((item) => {
+          return (
+            <Link
+              className={classnames(
+                styles.nav,
+                this.state.currentName === item.name ? styles.active : ""
+              )}
+              onClick={() => {this.navHandle(item.name)}}
+              to={item.router}
+              key={item.id}
+            >
+              {item.name}
+            </Link>
+          );
+        })}
       </div>
-    )
+    );
   }
-};
+}

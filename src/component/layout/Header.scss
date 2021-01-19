@@ -8,8 +8,12 @@
   .nav {
     width: 68px;
     cursor: pointer;
+    color: #555;
     &:hover {
       color: blue;
     }
+  }
+  .active {
+    color: blue;
   }
 }

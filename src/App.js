@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <Suspense fallback={<div>123</div>}>
+    <Suspense fallback>
       <BrowserRouter>
         <Header />
         {
