@@ -27,19 +27,22 @@ export default class App extends React.Component{
       items: this.state.items.concat({name: 'Item ' + (Number(this.state.items.length) + 1) ,id: this.state.items.length + 2})
     })
   }
+  clickHandle() {
+    this.props.history.push("/home");
+  }
 
   render() {
     return (
       <div>
-        <Button type="primary">Button</Button>
-        <Button onClick={this.handleClick.bind(this)} disabled={this.state.disabled}>Add Item</Button>
-        <ul>
+        <Button type="primary" onClick={this.clickHandle.bind(this)}>登录</Button>
+        {/* <Button onClick={this.handleClick.bind(this)} disabled={this.state.disabled}>Add Item</Button> */}
+        {/* <ul>
         {
           this.state.items.map(function(item) {
             return <li key={item.id}>{item.id}{item.name}</li>
           })
         }
-        </ul>
+        </ul> */}
       </div>
     )
   }

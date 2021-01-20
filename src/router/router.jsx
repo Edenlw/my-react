@@ -3,25 +3,27 @@ const routers = [
   {
     path: "/",
     exact: true,
-    component: React.lazy(()=>import(/*webpackchunkname:login*/'../pages/login/login.jsx' )),
-    childRoutes: [
-      {
-        path: "/home",
-        component:  React.lazy(()=>import(/*webpackchunkname:home*/'../pages/home/home.jsx' )),
-      },
-      {
-        path: "/about",
-        component:  React.lazy(()=>import(/*webpackchunkname:about*/'../pages/about/about.jsx' )),
-      },
-      {
-        path: "/life",
-        component:  React.lazy(()=>import(/*webpackchunkname:life*/'../pages/life/life.jsx' )),
-      },
-      {
-        path: "/blog",
-        component:  React.lazy(()=>import(/*webpackchunkname:blog*/'../pages/blog/blog.jsx' )),
-      }
-    ]
+    component: React.lazy(()=>import('../pages/login/login.jsx' )),
   },
+  {
+    path: "/home",
+    exact: true,
+    component:  React.lazy(()=>import('../pages/home/home.jsx' )),
+  },
+  {
+    path: "/about",
+    exact: true,
+    component:  React.lazy(()=>import('../pages/about/about.jsx' )),
+  },
+  {
+    path: "/life",
+    exact: true,
+    component:  React.lazy(()=>import('../pages/life/life.jsx' )),
+  },
+  {
+    path: "/blog",
+    exact: true,
+    component:  React.lazy(()=>import('../pages/blog/blog.jsx' )),
+  }
 ]
 export default routers;
