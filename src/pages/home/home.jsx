@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from "../../component/layout/Header";
 export default class App extends React.Component{
 
   constructor(props) {
@@ -17,6 +18,7 @@ export default class App extends React.Component{
   render() {
     return (
       <div>
+        <Header />
         123
       </div>
     )
