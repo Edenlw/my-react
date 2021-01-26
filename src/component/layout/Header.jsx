@@ -30,7 +30,7 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className={styles.header}>
+        <div className={styles.header}>
         {this.state.list.map((item) => {
           return (
             <Link
